@@ -89,7 +89,7 @@ def run():
         Wn = build_weights_matrix(Y)
         scipy.io.mmwrite(pic, Wn)
 
-    ## once markes are found
+    ## once marks are found
     colored = find_marked_locations(bw_rgb, marked_rgb)
 
     ## set rows in colored indices
