@@ -64,5 +64,5 @@ for (i, rect) in enumerate(rects):
 	output = face_utils.visualize_facial_landmarks(image, shape)
 	cv2.imshow("Image", output)
 	filename = "detect_" + args["image"]
-	cv2.imwrite(filename,img)
+	cv2.imwrite(filename, output)
 	cv2.waitKey(0)
