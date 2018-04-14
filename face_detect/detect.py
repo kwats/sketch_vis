@@ -62,6 +62,9 @@ for (i, rect) in enumerate(rects):
 	# 	cv2.waitKey(0)
 
 	# visualize all facial landmarks with a transparent overlay
+	colors = [(170, 47, 35), (91, 61, 46), (91, 61, 46),
+			(206, 201, 198), (206, 201, 198),
+			(204, 157, 128), (204, 157, 128)]
 	output = face_utils.visualize_facial_landmarks(image, shape)
 #	cv2.imshow("Image", output)
 	filename = os.path.splitext(os.path.basename(args["image"]))[0] + "_detect.jpg"
