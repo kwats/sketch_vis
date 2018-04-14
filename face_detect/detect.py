@@ -64,6 +64,6 @@ for (i, rect) in enumerate(rects):
 	# visualize all facial landmarks with a transparent overlay
 	output = face_utils.visualize_facial_landmarks(image, shape)
 #	cv2.imshow("Image", output)
-	filename = os.path.splitext(os.path.basename(args[image]))[0] "_detect.jpg"
+	filename = os.path.splitext(os.path.basename(args["image"]))[0] + "_detect.jpg"
 	cv2.imwrite(filename, output)
 	cv2.waitKey(0)
