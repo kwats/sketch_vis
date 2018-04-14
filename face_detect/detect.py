@@ -34,8 +34,8 @@ rects = detector(gray, 1)
 for (i, rect) in enumerate(rects):
 	# determine the facial landmarks for the face region, then
 	# convert the landmark (x, y)-coordinates to a NumPy array
-	# shape = predictor(gray, rect)
-	# shape = face_utils.shape_to_np(shape)
+	shape = predictor(gray, rect)
+	shape = face_utils.shape_to_np(shape)
 	#
 	# # loop over the face parts individually
 	# for (name, (i, j)) in face_utils.FACIAL_LANDMARKS_IDXS.items():
