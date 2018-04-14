@@ -8,6 +8,7 @@ import argparse
 import imutils
 import dlib
 import cv2
+import os
 
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
@@ -62,7 +63,7 @@ for (i, rect) in enumerate(rects):
 
 	# visualize all facial landmarks with a transparent overlay
 	output = face_utils.visualize_facial_landmarks(image, shape)
-	cv2.imshow("Image", output)
-	filename = "detect_" + args["image"]
+#	cv2.imshow("Image", output)
+	filename = os.path.splitext(os.path.basename(args[image]))[0] "_detect.jpg"
 	cv2.imwrite(filename, output)
 	cv2.waitKey(0)
