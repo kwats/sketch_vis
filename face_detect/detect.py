@@ -71,26 +71,26 @@ def visualize_facial_landmarks(image, shape, colors=None, alpha=0.75):
                     pts[2][1] = pts[2][1] + 2
                     ptA = tuple(pts[1])
                     ptB = tuple(pts[2])
-		    cv2.line(overlay, ptA, ptB, colors[i], 2)
+		    cv2.line(overlay, ptA, ptB, colors[i], 1)
                     ptA = tuple(pts[len(pts)-1])
                     ptB = tuple(pts[len(pts)-2])
-		    cv2.line(overlay, ptA, ptB, colors[i], 2)
+		    cv2.line(overlay, ptA, ptB, colors[i], 1)
                 elif name == "nose":
                         for l in range(1, len(pts)):
                                 pts[1][1] += 2
                                 pts[2][1] += 2
                                 ptA = tuple(pts[1])
                                 ptB = tuple(pts[2])
-                                cv2.line(overlay, ptA, ptB, colors[i], 2)
+                                cv2.line(overlay, ptA, ptB, colors[i], 1)
                                 ptA = tuple(pts[len(pts)-1])
                                 ptB = tuple(pts[len(pts)-2])
-		                cv2.line(overlay, ptA, ptB, colors[i], 2)
+		                cv2.line(overlay, ptA, ptB, colors[i], 1)
 		# check if are supposed to draw the jawline
                 elif name == "left_eyebrow" or name == "right_eyebrow":
 			for l in range(1, len(pts)):
 				ptB = tuple(pts[l])
 				ptA = tuple(pts[l - 1])
-			        cv2.line(overlay, ptA, ptB, colors[i], 2)
+			        cv2.line(overlay, ptA, ptB, colors[i], 1)
 		elif name == "jaw":
 			# since the jawline is a non-enclosed facial region,
 			# just draw lines between the (x, y)-coordinates
@@ -114,9 +114,9 @@ def visualize_facial_landmarks(image, shape, colors=None, alpha=0.75):
                                     ptA = tuple(ptSa)
                                     ptB = tuple(ptSb)
                                 if l+1  == len(pts)/4 or l-2 == (len(pts)/2 + len(pts)/4):
-				    cv2.line(overlay, ptA, ptB, (68, 0, 204), 2)
+				    cv2.line(overlay, ptA, ptB, (68, 0, 204), 1)
                                 else:
-				    cv2.line(overlay, ptA, ptB, colors[i], 2)
+				    cv2.line(overlay, ptA, ptB, colors[i], 1)
 		# otherwise, compute the convex hull of the facial
 		# landmark coordinates points and display it
 		else:
@@ -144,7 +144,7 @@ predictor = dlib.shape_predictor(args["shape_predictor"])
 
 # load the input image, resize it, and convert it to grayscale
 image = cv2.imread(args["image"])
-image = imutils.resize(image, width=250)
+image = imutils.resize(image, width=400)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # detect faces in the grayscale image
