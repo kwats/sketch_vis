@@ -163,6 +163,10 @@ for (i, rect) in enumerate(rects):
 			(114,160,204), (114,160,204)]
 
 	output = visualize_facial_landmarks(image,shape,colors=face_colors, alpha=1)
+<<<<<<< HEAD
+=======
+#	cv2.imshow("Image", output)
+>>>>>>> 7d49e2d4caf8df4a251ebc3c1612eb9fa468b9e3
         height, width = output.shape[:2]
         title = os.path.splitext(os.path.basename(args["image"]))[0]
 	filename = "../colorization/samples/" + title + "_marked.bmp"
